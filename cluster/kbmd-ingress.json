@@ -1,0 +1,19 @@
+{
+    "apiVersion": "extensions/v1beta1",
+    "kind": "Ingress",
+    "metadata": {
+        "name": "kbmd",
+        "annotations": {
+            "kubernetes.io/ingress.global-static-ip-name": "kbmd-ip"
+        },
+        "labels": {
+            "app": "kbmd"
+        }
+    },
+    "spec": {
+        "backend": {
+            "serviceName": "kbmd-backend",
+            "servicePort": 3000
+        }
+    }
+}
