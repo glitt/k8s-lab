@@ -131,7 +131,7 @@ func logging(logger *log.Logger) func(http.Handler) http.Handler {
 	}
 }
 
-// Tracking middleware.
+// Tracing middleware.
 func tracing(nextRequestID func() string) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
